@@ -471,6 +471,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: static;
 }
 
 .li-dedicamos2 {
@@ -481,6 +482,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: static;
 }
 
 .li-dedicamos3 {
@@ -491,6 +493,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: static;
 }
 
 .social {
@@ -621,8 +624,23 @@ p {
   gap: 70px;
 }
 
+.border-page::after {
+  position: relative;
+  content: "";
+  display: block;
+  border-radius: 2px;
+  background-color: #2196f3;
+  width: 100%;
+  height: 4px;
+}
+
+.border-page::after {
+  top: 28px;
+}
+
 .modal {
   position: fixed;
+  flex-shrink: 0;
   top: 0;
   left: 0;
   right: 0;
@@ -631,6 +649,8 @@ p {
   display: flex;
   opacity: 0;
   pointer-events: none;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-show {
@@ -661,6 +681,7 @@ p {
   display: flex;
   justify-content: center;
   margin: 8px;
+  background-color: #fff;
 }
 
 .icon-close {
@@ -675,6 +696,10 @@ p {
   border-radius: 4px;
   border-radius: 50%;
   border: #2196f3 1px solid;
+}
+
+.modal-close:hover .icon-close {
+  fill: #2196f3;
 }
 
 .card-image {
